@@ -1,0 +1,19 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type MessageDto {
+    id: Int
+    message: String!
+}
+
+type Mutation {
+    message(message: String!): MessageDto!
+}
+
+type Query {
+    messages: [MessageDto!]!
+}

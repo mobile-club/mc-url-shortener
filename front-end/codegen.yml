@@ -1,0 +1,22 @@
+overwrite: true
+schema: http://back-end:4000/graphql
+documents: src/**/*.graphql
+generates:
+  src/graphql.d.ts:
+    plugins:
+      - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: graphql.d.ts
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+      withMutationFn: false
+      addDocBlocks: false
+      reactApolloVersion: 3
+      preResolveTypes: true
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo

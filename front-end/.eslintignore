@@ -1,0 +1,13 @@
+.cache
+.next
+.vercel
+.vscode
+.git
+
+public
+node_modules
+
+src/graphql.d.ts
+src/**/*.generated.ts
+
+next-env.d.ts

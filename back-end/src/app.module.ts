@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
-import { MessageModule } from './modules/message/message.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { Connection } from 'typeorm';
+
+import { MessageModule } from './modules/message/message.module';
+import { ShortcutModule } from './modules/shortcut/shortcut.module';
+import { ShortcutController } from './controllers/shortcut';
 
 const graphQLConfig = GraphQLModule.forRoot<ApolloDriverConfig>({
   driver: ApolloDriver,
@@ -14,10 +17,11 @@ const graphQLConfig = GraphQLModule.forRoot<ApolloDriverConfig>({
 
 const typeORMConfig = TypeOrmModule.forRoot();
 
-const modules = [MessageModule];
+const modules = [MessageModule, ShortcutModule];
 
 @Module({
   imports: [graphQLConfig, typeORMConfig, ...modules],
+  controllers: [ShortcutController],
 })
 export class AppModule {
   constructor(private _connection: Connection) {}

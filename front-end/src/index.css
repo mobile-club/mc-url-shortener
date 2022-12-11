@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.font-size-6 {
+  font-size: 2rem;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:hover {
+  color: purple;
+}

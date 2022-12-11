@@ -1,0 +1,13 @@
+query listShortcuts {
+    shortcuts {
+        path
+        target
+    }
+}
+
+mutation createShortcut($target: String!) {
+    createShortcut(target: $target) {
+        path
+        target
+    }
+}

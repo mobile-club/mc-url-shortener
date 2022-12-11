@@ -55,4 +55,8 @@ export class ShortcutService {
   async findPath(path: string): Promise<Shortcut> {
     return await this.#findLast({ path });
   }
+
+  list() {
+    return this.repository.find();
+  }
 }

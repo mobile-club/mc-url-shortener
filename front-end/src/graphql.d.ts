@@ -12,23 +12,23 @@ export type Scalars = {
   Float: number;
 };
 
-export type MessageDto = {
-  __typename?: 'MessageDto';
-  id?: Maybe<Scalars['Int']>;
-  message: Scalars['String'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
-  message: MessageDto;
+  createShortcut: ShortcutDto;
 };
 
 
-export type MutationMessageArgs = {
-  message: Scalars['String'];
+export type MutationCreateShortcutArgs = {
+  target: Scalars['String'];
 };
 
 export type Query = {
   __typename?: 'Query';
-  messages: Array<MessageDto>;
+  shortcuts: Array<ShortcutDto>;
+};
+
+export type ShortcutDto = {
+  __typename?: 'ShortcutDto';
+  path: Scalars['String'];
+  target: Scalars['String'];
 };

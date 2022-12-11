@@ -5,15 +5,15 @@ schema {
     mutation: Mutation
 }
 
-type MessageDto {
-    id: Int
-    message: String!
+type ShortcutDto {
+    path: String!
+    target: String!
 }
 
 type Mutation {
-    message(message: String!): MessageDto!
+    createShortcut(target: String!): ShortcutDto!
 }
 
 type Query {
-    messages: [MessageDto!]!
+    shortcuts: [ShortcutDto!]!
 }

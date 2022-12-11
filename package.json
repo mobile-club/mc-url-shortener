@@ -6,7 +6,7 @@
     "postinstall": "(cd front-end && yarn) && (cd back-end && yarn)",
     "dev": "docker-compose up",
     "stop": "docker-compose down",
-    "rebuild": "docker-compose down && docker volume rm mc-url-shortener_back-end-node_modules mc-url-shortener_front-end-node_modules && docker-compose up -d --build"
+    "rebuild": "docker-compose down && docker volume rm mobile-club-test_back-end-node_modules mc-url-shortener_front-end-node_modules && docker-compose up -d --build"
   },
   "license": "MIT"
 }

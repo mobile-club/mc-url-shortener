@@ -1,9 +1,9 @@
 overwrite: true
 schema: http://back-end:4000/graphql
-documents: src/**/*.graphql
+documents: src/**/*.graphql 
 generates:
   src/graphql.d.ts:
-    plugins:
+    plugins: 
       - typescript
   src/:
     preset: near-operation-file

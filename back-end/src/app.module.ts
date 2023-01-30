@@ -4,6 +4,7 @@ import { Connection } from 'typeorm';
 import { MessageModule } from './modules/message/message.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { UrlShortenerModule } from './modules/url-shortener/url-shortener.module';
 
 const graphQLConfig = GraphQLModule.forRoot<ApolloDriverConfig>({
   driver: ApolloDriver,
@@ -14,7 +15,7 @@ const graphQLConfig = GraphQLModule.forRoot<ApolloDriverConfig>({
 
 const typeORMConfig = TypeOrmModule.forRoot();
 
-const modules = [MessageModule];
+const modules = [MessageModule, UrlShortenerModule];
 
 @Module({
   imports: [graphQLConfig, typeORMConfig, ...modules],

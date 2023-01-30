@@ -31,4 +31,15 @@ export type MutationMessageArgs = {
 export type Query = {
   __typename?: 'Query';
   messages: Array<MessageDto>;
+  shortenUrl: UrlShortenerDto;
+};
+
+
+export type QueryShortenUrlArgs = {
+  url: Scalars['String'];
+};
+
+export type UrlShortenerDto = {
+  __typename?: 'UrlShortenerDto';
+  shortenedUrl: Scalars['String'];
 };
